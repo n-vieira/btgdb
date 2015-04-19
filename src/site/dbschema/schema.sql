@@ -213,6 +213,19 @@ CREATE TABLE `image` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `manager`
+--
+
+DROP TABLE IF EXISTS `manager`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `manager` (
+  `task_id` int(6) NOT NULL,
+  PRIMARY KEY (`task_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `person`
 --
 
@@ -334,4 +347,4 @@ CREATE TABLE `task` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-19 18:34:18
+-- Dump completed on 2015-04-19 19:03:52
