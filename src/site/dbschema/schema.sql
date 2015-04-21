@@ -42,13 +42,17 @@ DROP TABLE IF EXISTS `Scheme`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Scheme` (
-  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `id` int(6) NOT NULL,
   `iwsg` int(6) DEFAULT NULL,
   `key` char(6) DEFAULT NULL,
   `ringingstatus_id` int(6) NOT NULL,
   `dbstatus_id` int(6) NOT NULL,
   `person_id` int(6) NOT NULL,
+  `institution_id` int(6) DEFAULT NULL,
   `country_id` int(6) NOT NULL,
+  `begining` year(4) DEFAULT NULL,
+  `aproved` date DEFAULT NULL,
+  `update` date DEFAULT NULL,
   `LA3` varchar(25) DEFAULT NULL,
   `LA2` varchar(25) DEFAULT NULL,
   `LA1` varchar(25) DEFAULT NULL,
@@ -61,12 +65,25 @@ CREATE TABLE `Scheme` (
   `RB3` varchar(25) DEFAULT NULL,
   `RB2` varchar(25) DEFAULT NULL,
   `RB1` varchar(25) DEFAULT NULL,
-  `begining` year(4) DEFAULT NULL,
-  `aproved` date DEFAULT NULL,
-  `update` date DEFAULT NULL,
+  `schememarker` varchar(100) DEFAULT NULL,
   `flag_id` int(1) DEFAULT NULL,
+  `flagshape_id` int(6) DEFAULT NULL,
   `engraved_id` int(1) DEFAULT NULL,
-  `institution_id` int(6) DEFAULT NULL,
+  `yearmarker` varchar(45) DEFAULT NULL,
+  `LAsize` varchar(45) DEFAULT NULL,
+  `LBsize` varchar(45) DEFAULT NULL,
+  `RAsize` varchar(45) DEFAULT NULL,
+  `RBsize` varchar(45) DEFAULT NULL,
+  `notes` varchar(500) DEFAULT NULL,
+  `age_id` int(6) DEFAULT NULL,
+  `subspecies_id` int(6) DEFAULT NULL,
+  `season_id` int(6) DEFAULT NULL,
+  `identification_id` int(6) DEFAULT NULL,
+  `numberofcombs` int(5) DEFAULT NULL,
+  `numberofbirds` int(5) DEFAULT NULL,
+  `ringingplaces` varchar(255) DEFAULT NULL,
+  `habitat` varchar(100) DEFAULT NULL,
+  `engravedcharacters` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `iwsg_UNIQUE` (`iwsg`),
@@ -310,6 +327,21 @@ CREATE TABLE `ringing_status` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `season`
+--
+
+DROP TABLE IF EXISTS `season`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `season` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `season` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `subspecies`
 --
 
@@ -347,4 +379,4 @@ CREATE TABLE `task` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-19 19:03:52
+-- Dump completed on 2015-04-21 22:30:20
