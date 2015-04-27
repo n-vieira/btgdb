@@ -1,13 +1,31 @@
 package net.vieira.btgbd.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Institution")
 public class Institution extends AbstractBtgEntity {
 
 	private static final long serialVersionUID = -1169205976417237715L;
 	
+	@Column(name="name")
 	private String name;
+	
+	@Column(name="url")
 	private String url;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="address")
 	private String address;
+	
+	@ManyToOne
+	@JoinColumn(name="country_id")
 	private Country country;
 	
 	public String getName() {
