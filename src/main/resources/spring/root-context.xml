@@ -18,8 +18,7 @@
 	<context:property-placeholder location="classpath:application.properties" />
 
 	<context:annotation-config />
-	<context:component-scan base-package="net.vieira.btgbd.web" />
-
+	<context:component-scan base-package="net.vieira.btgbd.web, net.vieira.btgbd.config" />
 	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
 	
 	<bean id="hibernateTransactionManager"
